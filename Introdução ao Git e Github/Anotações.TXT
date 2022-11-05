@@ -1,0 +1,39 @@
+Comandos Básicos para Git
+
+Listar as pastas: dir
+Criar pastas/arquivos: mkdir e o nome da pasta
+Deletar pastas/ arquivos: del e o nome da pasta. Deleta oque tem dentro da pasta.
+Deletar o repositório/tudo: rmdir, o nome da pasta  /S /Q
+ Navegar nas pastas: cd/
+Para entrar na pasta windows: cd/windows, e vai ser listada todas as pastas do windows.
+Para sair da pasta: ..
+Limpas: cls ou ctrl+l
+tecla Tab: completa palavras.
+
+Tópicos fundamentais para entender o funcionamento do Git
+
+A sigla SHA significa Secure Hash Algorithm (Algoritmo de Hash seguro), é um conjunto de funções hash criptográficas projetadas pela NSA (Agência de Segurança Nacional dos EUA). A encriptação gera conjunto de caracteres identificador de 40 dígitos. É uma forma curta de representar um arquivo; 
+
+Objetos internos do Git
+
+BLOBS: contém metadados do git, o tipo do objeto, o tamanho do arquivo, guarda o SHA do arquivo…(Bloco básico de composição)
+TREES(arvore): Ela armazena  e aponta os tipos de blobs diferentes,  também contém metadados, guarda o nome do arquivo. Ela é responsável por montar toda a estrutura de onde está o arquivo.
+COMMITS: objeto que vai juntar tudo, que dá sentido. Ele aponta para uma árvore, para um parente( um commit realizado antes dele), para o autor ou para mensagem, também possui um timestamp(um carimbo de tempo).
+
+
+Ciclo de vida dos arquivos no Git
+
+Git Init: esse comando além de criar um pasta .git, ela inicializa um conceito do git chamado repositório.
+Git Status mostra qual status daquele commit, podendo estar Untracked ou Tracked (Unmodified, Modified, Staged)
+mv: para mover um arquivo para uma pasta, ex: mv strogonoff.md ./receitas/
+git add para modificar status para staged: git add (nome do arquivo) strogonoff.md receitas/
+git commit para criar commit: git commit -m “cria pasta receitas, move arquivo para receita”
+git remote para apontar a versão local do repositório para um repositório remoto/origem remota: git remote add origin e o link do github
+git push para empurrar a versão local para o repositório remoto: git push origin master
+git add * move tudo.
+Resolvendo conflitos
+
+git pull baixa o repositório e tenta integrar o repositório local com o repositório remoto: git pull origin master 
+abre o arquivo, edita a parte que vai ficar e depois empurra novamente.
+git add * => git commit -m “resolver conflitos” => git push origin master
+git clone para clonar/baixar código do github e passar para o git local: git clone + link do arquivo do github que quer clonar.
